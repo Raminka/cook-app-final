@@ -1,82 +1,89 @@
-
 <div class="w3-margin" ng-controller="Page2Controller">
-
-
-      <div class="w3-container ">
-
-    <div class="w3-third">
-      <img src="{{recette.images[0]}}" style="width:100%;min-height:200px">
+  <div class="w3-display-container w3-content w3-center" style="max-width:1500px">
+    <img class="w3-image" src="{{recette.images[0]}}" alt="Me" width="1500">
+    <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
+      <h1 class="w3-hide-medium w3-jumbo w3-hide-small w3-xxxlarge">{{recette.nom}}</h1>
+      <h5 class="w3-hide-large" style="white-space:nowrap">{{recette.nom}}</h5>
+      <h3 class="w3-hide-medium w3-hide-small">{{recette.tempsDeCuisson}} minutes</h3>
     </div>
 
-    <div class="w3-twothird w3-center">
-      <h1>{{recette.nom}}</h1>
-      <h2>temps de cuisson : {{recette.tempsDeCuisson}} minutes</h2>
-      <button ng-click="gotohome()"
-      type="button" class="w3-btn w3-red w3-round-small">Go back to home!</button>
+    <div class="w3-bar w3-light-grey w3-round w3-display-topmiddle w3-hide-small" style="top:0px">
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Ingrediants')">Ingrediants</button>
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Etapes')">Etapes</button>
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Reviews')">Commentaires</button>
+    </div>
+  </div>
+
+  <div id="Ingrediants" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-theme w3-display-container">
+        <span onclick="document.getElementById('Ingrediants').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+        <h1>Ingrediants</h1>
+      </div>
+      <div class="w3-container">
+        <h6 ng-repeat="ingrediant in recette.ingrediants">
+          <blockquote>{{ingrediant}}</blockquote>
+        </h6>
+      </div>
     </div>
   </div>
 
 
-    <div class="w3-bar w3-theme-l1 w3-margin-top">
-      <button class="w3-bar-item w3-button" ng-click="openTabs('Ingrediants')">Ingrediants</button>
-      <button class="w3-bar-item w3-button" ng-click="openTabs('Etapes')">Etapes</button>
-      <button class="w3-bar-item w3-button" ng-click="openTabs('Reviews')">Reviews</button>
+  <div id="Etapes" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-theme w3-display-container">
+        <span onclick="document.getElementById('Etapes').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+        <h1>Etapes</h1>
+      </div>
+      <div class="w3-container">
+        <h6 ng-repeat="etape in recette.etapes">
+          <blockquote>{{etape}}</blockquote>
+        </h6>
+      </div>
     </div>
+  </div>
 
-    <div id="Ingrediants" class="w3-container rtab">
-      <h5>Ingrediants</h5>
-      <li ng-repeat="ingrediant in recette.ingrediants">
-        <blockquote>{{ingrediant}}</blockquote>
-      </li>
-    </div>
 
-    <div id="Etapes" class="w3-container rtab" style="display:none">
-      <h5>Etapes</h5>
-      <li ng-repeat="etape in recette.etapes">
-        <blockquote>{{etape}}</blockquote>
-      </li>
-    </div>
+  <div id="Reviews" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-theme w3-display-container">
+        <span onclick="document.getElementById('Reviews').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+        <h1>Commentaires</h1>
+      </div>
+      <div class="w3-container">
+        <ul>
+          <li ng-repeat="review in recette.reviews">
+            <blockquote>
+              <strong>{{review.stars}} Etoiles</strong>
+              {{review.body}}
+              <cite class="clearfix">—{{review.author}}</cite>
+            </blockquote>
+          </li>
+        </ul>
 
-    <div id="Reviews" class="w3-container rtab" style="display:none">
-      <ul>
-        <h5>Commentaires</h5>
-        <li ng-repeat="review in recette.reviews">
+        <form name="reviewForm" ng-submit="addReview(recette)">
           <blockquote>
             <strong>{{review.stars}} Etoiles</strong>
             {{review.body}}
             <cite class="clearfix">—{{review.author}}</cite>
           </blockquote>
-        </li>
-      </ul>
 
-      <!--  Review Form -->
-      <form name="reviewForm" ng-submit="addReview(recette)">
 
-        <!--  Live Preview -->
-        <blockquote >
-          <strong>{{review.stars}} Etoiles</strong>
-          {{review.body}}
-          <cite class="clearfix">—{{review.author}}</cite>
-        </blockquote>
-
-        <!--  Review Form -->
-        <h5>soumettre un commentaire</h5>
-        <fieldset class="form-group">
-          <select ng-model="review.stars" class="form-control w3-theme-l3" ng-options="stars for stars in [5,4,3,2,1]" title="Etoiles">
-            <option value>Notez la recette</option>
-          </select>
-        </fieldset>
-        <fieldset class="form-group">
-          <textarea ng-model="review.body" class="form-control w3-theme-l3" placeholder="Commentaire..." title="Commentaires"></textarea>
-        </fieldset>
-        <fieldset class="form-group">
-          <input ng-model="review.author" type="email" class="form-control w3-theme-l3" placeholder="jimmyDean@example.org" title="Email" />
-        </fieldset>
-        <fieldset class="form-group">
-          <input type="submit" class="btn btn-primary pull-right w3-theme-l3" value="soumettre le commentaire" />
-        </fieldset>
-      </form>
+          <h5>Soumettre un commentaire</h5>
+          <p><select ng-model="review.stars" class="w3-padding-16 w3-border" ng-options="stars for stars in [5,4,3,2,1]" title="Etoiles">
+              <option value>Notez la recette</option>
+            </select>
+          </p>
+          <p><textarea ng-model="review.body" class="w3-input w3-padding-16 w3-border" placeholder="Commentaire..." title="Commentaires"></textarea>
+          </p>
+          <p><input ng-model="review.author" class="w3-input w3-padding-16 w3-border" type="email" placeholder="jimmyDean@example.org"  title="Email">
+          </p>
+          <fieldset class="form-group">
+            <input type="submit" class="w3-btn w3-red w3-round-small pull-right" value="soumettre le commentaire" />
+          </fieldset>
+        </form>
+      </div>
     </div>
-
+  </div>
 
 </div>
