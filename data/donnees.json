@@ -1,0 +1,131 @@
+[{
+  "nom":"Crêpes",
+  "description":"Une très vieille recette que j’avais publiée au tout début de mon blog en 2005 et qui avait disparu malencontreusement pendant le transfert de mon blog. Un des mystères mystérieux ^_^ de l’informatique.",
+  "recetteID":1,
+  "tempsDeCuisson":15,
+  "nbDePersonnes": 6,
+  "images": [
+    "images/crepes.jpg"
+  ],
+  "tempmin":0,
+  "tempmax":6,
+  "ingrediants":[
+    "250g de farine",
+    "4 œufs",
+    "1/2 litre de lait",
+    "1 pincée de sel",
+    "2 sachets de sucre vanillé",
+    "1 cuillère à soupe de sucre en poudre",
+    "1 cuillère à soupe de Cognac (facultatif)"
+  ],
+  "reviews":[]
+},
+{
+  "nom":"gâteau au chocolat",
+  "description":"Gâteau au chocolat fondant rapide",
+  "recetteID":2,
+  "tempsDeCuisson":40,
+  "nbDePersonnes":6,
+  "images":[
+      "images/gateauChoc.png"
+  ],
+  "ingrediants":[
+    "200g de chocolat",
+    "100g de beurre",
+    "3 oeufs",
+    "50g de farine",
+    "100g de sucre en poudre"
+  ],
+  "tempmin":15,
+  "tempmax":18,
+  "reviews":[],
+  "etapes":{
+    "1":"Préchauffez votre four à 180°C (thermostat 6)",
+    "2":"Dans une casserole, faites fondre le chocolat et le beurre coupé en morceaux à feu très doux. ",
+    "3":"Dans un saladier, ajoutez le sucre, les oeufs, la farine. Mélangez.",
+    "4":"Ajoutez le mélange chocolat/beurre. Mélangez bien. ",
+    "5":"Beurrez et farinez votre moule puis y versez la pâte à gâteau. ",
+    "6":"Faites cuire au four environ 20 minutes. ",
+    "7":"A la sortie du four le gâteau ne paraît pas assez cuit. C'est normal, laissez-le refroidir puis démoulez- le. "
+  }
+},
+{
+  "nom":"gaufres",
+  "description":"Mangez-les légèrement chaudes avec un peu de sucre glace... Délicieux et sans trop de complexes !! ",
+  "recetteID":3,
+  "tempsDeCuisson":17,
+  "nbDePersonnes":5,
+  "images":["images/gaufres.jpg"],
+  "ingrediants":[
+    "200 g de farine",
+    "30 g de sucre",
+    "3 oeufs ",
+    "20 g de beurre ",
+    "25 cl de lait ",
+    "1 pincée de Sel "
+  ],
+  "tempmin":7,
+  "tempmax":15,
+  "reviews":[],
+  "etapes":{
+    "1":"Mettre la farine dans un saladier, y ajouter le sucre, les jaunes d'œufs et le beurre ramolli. ",
+    "2":"Délayer peu à peu le tout en y ajoutant le lait pour qu'il n'y ait pas de grumeaux. ",
+    "3":"Battre les blancs en neige avec une pincée de sel et les ajouter au restant en remuant délicatement. ",
+    "4":"Cuire le tout dans un gaufrier légèrement beurré. ",
+    "5":"Bon appétit !! "
+  }
+},
+{"nom":"Truffes en chocolat",
+"description":"La recette est à commencer la veille. Cette recette est à l'intention de personnes qui n'ont pas accès à de la crème fraîche.NDLR : Une parfaite recette de Noel ! ",
+"recetteID":4,
+"tempsDeCuisson":55,
+"nbDePersonnes":8,
+"images":["images/truffes.png"],
+"ingrediants":[
+  "300 g de chocolat de bonne qualité",
+  "20 cl de crème à fouetter à 35% de mg",
+  "40 g de beurre non salé (de qualité)",
+  "Cacao en poudre (pour enrober)"
+],
+"tempmin":18,
+"tempmax":22,
+"reviews":[],
+"etapes":{
+  "1":"La veille : faire fondre le chocolat au bain-marie. Faire bouillir la crème dans une casserole et rajouter le chocolat fondu. ",
+  "2":"Mettre cette ganache au réfrigérateur pour le lendemain. ",
+  "3":"Le jour même : faire fondre la ganache au bain-marie. Incorporer le beurre. Laisser refroidir jusqu'à ce que la pâte devienne vraiment dure. ",
+  "4":"Faire des boulettes et les rouler dans le cacao. "
+
+}
+},
+{
+  "nom":"Muffin",
+  "description":"Muffin au pain d’épices pour Nöel",
+  "recetteID":5,
+  "tempsDeCuisson":22,
+  "nbDePersonnes":4,
+  "images":["images/muffin.png"],
+  "ingrediants":[
+    "130 g de farine",
+    "1/2 sachet de levure ",
+    "70 g de sucre roux ",
+    "1 oeuf ",
+    "20 cl de lait ",
+    "100 g de poudres de noisette ",
+    "1 cuillère à soupe d'huile ",
+    "1 cuillère à café de muscade ",
+    "1 cuillère à café de cannelle ",
+    "1 cuillère à café de gingembre en poudre"
+  ],
+  "tempmin":-5,
+  "tempmax":4,
+  "reviews":[],
+  "etapes":{
+    "1":"Préchauffer le four à 200°C (thermostat 6-7). ",
+    "2":"Placer tous les ingrédients dans la cuve en inox et lancer le programme PÂTE / GÂTEAU, 1min 30 à V12. ",
+    "3":"Verser la préparation dans des moules à muffins en remplissant jusqu’aux 3/4. ",
+    "4":"Enfourner 15 minutes. "
+  }
+}
+
+]

@@ -1,0 +1,70 @@
+
+<div class="w3-margin" ng-controller="HomeController">
+  <div class="w3-container"  >
+      <div style="margin-top:0px max-width:1600" class="w3-xlarge w3-panel w3-pale-blue w3-leftbar w3-border-blue">
+
+
+              <div class="  w3-third">
+
+
+                  <h1 class="w3-center w3-opacity">{{weather.current_observation.display_location.full}}</h1>
+                  <h2 class="w3-center w3-opacity"> <b>{{weather.current_observation.temp_c}}°C</b></h2>
+                  <h3 class="w3-opacity w3-center w3-hide-small">Recettes conseillée du jour:</h3>
+                  <h2 class="w3-hide-small w3-center w3-opacity"><b>{{recetteConseille.nom}}</b></h2>
+                <h4 class="w3-center w3-opacity">  <a ui-sref="detail({id:recetteConseille.recetteID})" class="w3-center">Plus de détails</a></h4>
+
+              </div>
+              <div class='w3-twothird'>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="{{recetteConseille.images[0]}}" alt="{{recetteConseille.nom}}" style="width:100%">
+
+  </div>
+
+</div>
+</div>
+</div>
+
+  <div class="w3-container"  >
+  <div class=" w3-panel w3-pale-blue w3-leftbar w3-border-blue ">
+    <h1 class="w3-opacity w3-center">Profitez aussi de nos autres Recettes
+    </h1></div>
+  </div>
+
+  <div class="list-group w3-margin "  >
+      <!--  Product Container  -->
+      <div class="list-group-item w3-container w3-theme-l1" ng-repeat="recette in data.json" style="margin-top:50px">
+
+
+
+  <div class="w3-third  ">
+    <img src="{{recette.images[0]}}" style="width:100%;min-height:200px">
+  </div>
+
+  <div class="w3-twothird w3-container ">
+    <h1>{{recette.nom}}</h1>
+    <h2>temps de cuisson : {{recette.tempsDeCuisson}} minutes</h2>
+    <!-- Product Tabs  -->
+
+    <h5>{{recette.description}}</h5>
+     <a ui-sref="detail({id:recetteConseille.recetteID})" class="w3-center">Plus de détails</a>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
