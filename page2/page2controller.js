@@ -10,16 +10,22 @@ myApp.controller('Page2Controller', ["$scope", "$state","$http","sampleFactory",
       $state.go("home");
     }
 
+    $scope.openTabs = function(tabName) {
+      var i;
+      var x = document.getElementsByClassName("rtab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+    }
     var id = $stateParams.id;
     function getById(arr, id) {
-console.log(arr.data);
-    for (var i = 0; i < arr.data.length; i++) {
-      console.log('2');
+      for (var i = 0; i < arr.data.length; i++) {
         if (arr.data[i].recetteID === id) {
           console.log(arr.data[i]);
             return arr.data[i];
         }
-    }
+      }
     }
 
 
@@ -29,8 +35,14 @@ console.log(arr.data);
         console.log(parseInt(id));
 
         $scope.recette = getById(data,parseInt(id));
-          console.log($scope.recette);
+          console.log($scope.recette.etapes);
     });
+    $scope.review = {};
+    $scope.addReview = function(recette) {
+      recette.reviews.push($scope.review);
+
+      $scope.review = {};
+    };
 
   }
 ]);
