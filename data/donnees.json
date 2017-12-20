@@ -18,10 +18,17 @@
     "1 cuillère à soupe de sucre en poudre",
     "1 cuillère à soupe de Cognac (facultatif)"
   ],
-  "reviews":[]
+  "reviews":[],
+  "etapes":{
+    "1":"Dans un saladier, délayer la farine, les oeufs, le sucre vanillé, le sel et le lait avec un fouet.",
+    "2":"Ajouter le beurre fondu et la cuillerée de rhum. Laisser reposer.",
+    "3":"Dans une poêle très chaude, verser un peu de beurre pour graisser la poêle.",
+    "4":"Verser une demie louche de pâte et faire cuire quelques minutes.",
+    "5":"Le temps de cuisson dépend de l'intensité du feu et également des goûts."
+  }
 },
 {
-  "nom":"gâteau au chocolat",
+  "nom":"Gâteau au Chocolat",
   "description":"Gâteau au chocolat fondant rapide",
   "recetteID":2,
   "tempsDeCuisson":40,
@@ -50,7 +57,7 @@
   }
 },
 {
-  "nom":"gaufres",
+  "nom":"Gaufres",
   "description":"Mangez-les légèrement chaudes avec un peu de sucre glace... Délicieux et sans trop de complexes !! ",
   "recetteID":3,
   "tempsDeCuisson":17,
@@ -75,7 +82,7 @@
     "5":"Bon appétit !! "
   }
 },
-{"nom":"Truffes en chocolat",
+{"nom":"Truffes en Chocolat",
 "description":"La recette est à commencer la veille. Cette recette est à l'intention de personnes qui n'ont pas accès à de la crème fraîche.NDLR : Une parfaite recette de Noel ! ",
 "recetteID":4,
 "tempsDeCuisson":55,
