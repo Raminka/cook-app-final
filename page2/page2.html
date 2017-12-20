@@ -1,12 +1,80 @@
 
 <div class="w3-margin" ng-controller="Page2Controller">
 
-  <br>
-  <p>This is the <i>page2</i> page.</p>
-  <h1>{{recette.nom}}</h1>
-  <br><br>
+  <div class="w3-container w3-theme-l4">
+    <div class="w3-third">
+      <img src="{{recette.images[0]}}" style="width:50%;min-height:200px">
+    </div>
 
-  <button ng-click="gotohome()"
-    type="button" class="w3-btn w3-red w3-round-small">Go back to home!</button>
+    <div class="twothird w3-container ">
+      <h1>{{recette.nom}}</h1>
+      <h2>temps de cuisson : {{recette.tempsDeCuisson}} minutes</h2>
+      <button ng-click="gotohome()"
+      type="button" class="w3-btn w3-red w3-round-small">Go back to home!</button>
+    </div>
 
-</div>
+    <div class="w3-bar w3-theme-l1 w3-margin-top">
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Ingrediants')">Ingrediants</button>
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Etapes')">Etapes</button>
+      <button class="w3-bar-item w3-button" ng-click="openTabs('Reviews')">Reviews</button>
+    </div>
+
+    <div id="Ingrediants" class="w3-container rtab">
+      <h5>Ingrediants</h5>
+      <li ng-repeat="ingrediant in recette.ingrediants">
+        <blockquote>{{ingrediant}}</blockquote>
+      </li>
+    </div>
+
+    <div id="Etapes" class="w3-container rtab" style="display:none">
+      <h5>Etapes</h5>
+      <li ng-repeat="etape in recette.etapes">
+        <blockquote>{{etape}}</blockquote>
+      </li>
+    </div>
+
+    <div id="Reviews" class="w3-container rtab" style="display:none">
+      <ul>
+        <h5>Commentaires</h5>
+        <li ng-repeat="review in recette.reviews">
+          <blockquote>
+            <strong>{{review.stars}} Etoiles</strong>
+            {{review.body}}
+            <cite class="clearfix">—{{review.author}}</cite>
+          </blockquote>
+        </li>
+      </ul>
+
+      <!--  Review Form -->
+      <form name="reviewForm" ng-submit="addReview(recette)">
+
+        <!--  Live Preview -->
+        <blockquote >
+          <strong>{{review.stars}} Etoiles</strong>
+          {{review.body}}
+          <cite class="clearfix">—{{review.author}}</cite>
+        </blockquote>
+
+        <!--  Review Form -->
+        <h5>soumettre un commentaire</h5>
+        <fieldset class="form-group">
+          <select ng-model="review.stars" class="form-control w3-theme-l3" ng-options="stars for stars in [5,4,3,2,1]" title="Etoiles">
+            <option value>Notez la recette</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <textarea ng-model="review.body" class="form-control w3-theme-l3" placeholder="Commentaire..." title="Commentaires"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+          <input ng-model="review.author" type="email" class="form-control w3-theme-l3" placeholder="jimmyDean@example.org" title="Email" />
+        </fieldset>
+        <fieldset class="form-group">
+          <input type="submit" class="btn btn-primary pull-right w3-theme-l3" value="soumettre le commentaire" />
+        </fieldset>
+      </form>
+    </div>
+
+
+
+
+  </div>
